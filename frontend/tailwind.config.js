@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      transitionTimingFunction: {
+        'custom': 'cubic-bezier(0.215, 0.61, 0.355, 1)',
+      },
+    },
     fontFamily: {
       anton: ["Anton SC", "sans-serif"]
     }
