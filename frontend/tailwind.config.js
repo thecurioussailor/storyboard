@@ -11,8 +11,12 @@ export default {
       },
     },
     fontFamily: {
-      anton: ["Anton SC", "sans-serif"]
+      anton: ["Anton SC", "sans-serif"],
+      arsenal: ["Arsenal SC", "sans-serif"],
+      caveat: ["Caveat", "cursive"]
     }
   },
-  plugins: [],
+  plugins: [
+    
+  ],
 }
