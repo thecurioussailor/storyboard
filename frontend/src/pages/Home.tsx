@@ -1,10 +1,32 @@
+import { useEffect, useRef } from "react";
 import Navbar from "../components/Navbar"
 
 function Home() {
+
+    const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+
+    if (container) {
+      const onWheel = (event: WheelEvent) => {
+        event.preventDefault();
+        container.scrollBy({
+          left: event.deltaY < 0 ? -150 : 150,
+          behavior: "smooth",
+        });
+      };
+
+      container.addEventListener('wheel', onWheel);
+      return () => container.removeEventListener('wheel', onWheel);
+    }
+  }, []);
+    
+
   return (
-    <div>
+    <div  className="w-full h-full">
         <Navbar/>
-        <div className="flex">
+        <div ref={containerRef} id="container" className="flex overflow-x-hidden snap-x snap-mandatory">
         <section className="h-[80vh]">
             <div className="h-full">
                 <div className="h-full">
@@ -60,7 +82,7 @@ function Home() {
                 </div>
             </div>
         </section>
-        <section className="h-[100vh]">
+        <section className="h-[80vh]">
             <div className="h-full">
                 <div className="h-full w-[139vh]">
                     <div className="h-full w-full pr-[27vh] pl-[18vh]">

@@ -3,3 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* body {
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+} */
+
